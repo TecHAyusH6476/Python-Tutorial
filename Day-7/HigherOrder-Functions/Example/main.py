@@ -34,8 +34,3 @@ print("using loop ans_list : ", ans_list)
 ans_map = map(lambda a: apply_discount(a, 10), product_price)
 
 print("using map :", list(ans_map))
-
-
-                      # [100, 50, 453, 120, 200]
-using loop ans_list :  [90.0, 45.0, 407.7, 108.0, 180.0]
-using map :            [90.0, 45.0, 407.7, 108.0, 180.0]
