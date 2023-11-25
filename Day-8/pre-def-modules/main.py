@@ -12,4 +12,4 @@ log_val = log10(num)
 
 print(log_val)
 
-print(factorial(num))
+print(factorial(num))  # num*num-1*num-2.....*1
