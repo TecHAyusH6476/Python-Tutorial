@@ -11,6 +11,7 @@ class Animal:
     # (Animal) -> Inheritance
 
 
+# Inheritance - parent class ( properties and functions)
 class Cat(Animal):
     def speak(self):
         return self.name + " says meow!!"
@@ -25,5 +26,5 @@ my_dog = Dog(name="Bug")
 my_cat = Cat(name="Bin")
 
 
-print(my_dog.breed())
-print(my_dog.speak())
+print(my_cat.breed())
+print(my_cat.speak())

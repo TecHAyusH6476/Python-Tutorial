@@ -1,10 +1,10 @@
 # Class
 class Dog:
-    def __init__(self, name, age):
+    def __init__(self, name, age):  # pre-defined
         self.name = name
         self.age = age
 
-    def bark(self):
+    def bark(self):  # user defined
         print(self.name, " says woof!")
 
 
@@ -16,10 +16,13 @@ obj2 = Dog(name="Atom2", age=2)
 #     behaviour -> bark function
 
 print(obj1.name, " is ", obj1.age, "yrs old")
-obj1.bark()
+# obj1.bark()
 
-obj2.bark()
+# obj2.bark()
 
 # Constructor
 # instance vars
 # self
+
+
+# Car  -> Genric Term
