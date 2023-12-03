@@ -24,11 +24,3 @@ def read_and_op(filename):
 file_path = "C:/Users/Ayush singh/Desktop/Eduscient/Day-12/Filehandling/eg.txt"
 
 read_and_op(file_path)
-
-
-# Traceback (most recent call last):
-#   File "c:\Users\Ayush singh\Desktop\Eduscient\Day-12\Filehandling\main.py", line 18, in <module>
-#     read_and_op(file_path)
-#   File "c:\Users\Ayush singh\Desktop\Eduscient\Day-12\Filehandling\main.py", line 9, in read_and_op
-#     res = num1 / num2
-# ZeroDivisionError: division by zero
