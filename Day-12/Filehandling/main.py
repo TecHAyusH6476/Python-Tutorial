@@ -21,6 +21,6 @@ def read_and_op(filename):
         print("Code works !!!!! maybe")
 
 
-file_path = "C:/Users/Ayush singh/Desktop/Eduscient/Day-12/Filehandling/eg.txt"
+file_path = "file...path"
 
 read_and_op(file_path)
