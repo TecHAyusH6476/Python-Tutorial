@@ -5,6 +5,13 @@
 
 # Immutable in python -> Tuple
 
+
+# declaration of list
+num_list = []
+
+# declaration of tuple
+names_tuple = ()
+
 # List
 # Dynamic values and length
 fruits = ["apple", "grapes", 123, 5467]  # list []

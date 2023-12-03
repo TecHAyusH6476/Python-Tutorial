@@ -18,10 +18,10 @@ res = [i**2 for i in nums]
 nums = [12, 34, 623, 45, 6723, 78, 23, 0, -12, -13]
 # o/p = [12,34,78,0,-12]
 
-# res = []
-# for val in nums:
-#     if val % 2 == 0:
-#         res.append(val)  # putting values in res list [12,34,...,-12]
+res = []
+for val in nums:  # traverse list
+    if val % 2 == 0:
+        res.append(val)  # putting values in res list [12,34,...,-12]
 
 res = [val for val in nums if val % 2 == 0]
 

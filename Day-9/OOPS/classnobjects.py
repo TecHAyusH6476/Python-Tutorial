@@ -1,5 +1,6 @@
 # Class
 class Dog:
+    # Constructor -> to initialize variables
     def __init__(self, name, age):  # pre-defined
         self.name = name
         self.age = age

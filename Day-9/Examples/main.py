@@ -1,6 +1,6 @@
 from grade_calc import *
 
-student1_score = [95, 94, 95, 95, 90]  # max_marks = 100
+student1_score = [95, 94, 95, 95, 90]  # max_marks = 50
 student2_score = [65, 60, 63, 67, 60]
 
 a = calc_average(student1_score)
