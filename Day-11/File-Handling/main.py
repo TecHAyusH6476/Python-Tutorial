@@ -1,5 +1,5 @@
 folder_path = "C:/Users/Ayush singh/Desktop/Eduscient/Day-11/File-Handling/"
-file_name = "a.txt"
+file_name = "eg.txt"
 
 
 # absolute path - most of time work
@@ -13,7 +13,7 @@ file_name = "a.txt"
 
 # read
 with open(folder_path + file_name, "r") as file:
-    content = file.read()
+    content = file.read()  # returns a string
 
 
 print(content)

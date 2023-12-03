@@ -6,6 +6,5 @@ try:
         str_content = file.read()
         print(str_content)
 
-
 except FileNotFoundError:
     print("err: File name is wrong")
