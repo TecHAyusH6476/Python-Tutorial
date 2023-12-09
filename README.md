@@ -1,48 +1,63 @@
 # Python Tutorial with Git, Gitlab-CI, Cloudbuild-CI, Docker, Gcloud
 
-- [Python Tutorial with Git, Gitlab-CI, Cloudbuild-CI, Docker, Gcloud](#python-tutorial-with-git-gitlab-ci-cloudbuild-ci-docker-gcloud)
-  - [FAQ: Why would I want to read this?](#faq-why-would-i-want-to-read-this)
-  - [FAQ: What are we going to be doing here?](#faq-what-are-we-going-to-be-doing-here)
-  - [Understanding the PYTHONPATH](#understanding-the-pythonpath)
-  - [Understanding the global environment](#understanding-the-global-environment)
-    - [Script directory or current directory](#script-directory-or-current-directory)
-    - [Core Python installation](#core-python-installation)
-    - [Site packages](#site-packages)
-    - [(Advanced) Compiled modules](#advanced-compiled-modules)
-    - [(Advanced) Zip Python core installation](#advanced-zip-python-core-installation)
-  - [About directories and code organisation](#about-directories-and-code-organisation)
-  - [Understanding a virtual environment](#understanding-a-virtual-environment)
-    - [Installing Pipenv](#installing-pipenv)
-    - [Creating a virtual environment with Pipenv](#creating-a-virtual-environment-with-pipenv)
-    - [Virtualenv paths](#virtualenv-paths)
-  - [Creating a Python project](#creating-a-python-project)
-    - [Opening a directory as a project with PyCharm](#opening-a-directory-as-a-project-with-pycharm)
-      - [(Advanced) Selecting external virtualenv](#advanced-selecting-external-virtualenv)
-    - [Planning our work](#planning-our-work)
-      - [Searching in Google what we want to do](#searching-in-google-what-we-want-to-do)
-      - [Installing jupyter notebook as a dependency](#installing-jupyter-notebook-as-a-dependency)
-      - [Create quick mock notebook](#create-quick-mock-notebook)
-    - [Initializing a git repository](#initializing-a-git-repository)
-      - [Setting up git](#setting-up-git)
-    - [Adding initial files to git](#adding-initial-files-to-git)
-  - [Coding our first script](#coding-our-first-script)
-    - [Getting informed about how to use the API](#getting-informed-about-how-to-use-the-api)
-    - [Structuring the code](#structuring-the-code)
-    - [Running the initial script](#running-the-initial-script)
-    - [Using the IDE and exploring other packages](#using-the-ide-and-exploring-other-packages)
-    - [Dependencies of the code on external tools](#dependencies-of-the-code-on-external-tools)
-    - [Saving the work](#saving-the-work)
-    - [Project status so far](#project-status-so-far)
-  - [From script to packaged cli application](#from-script-to-packaged-cli-application)
-    - [From script to package](#from-script-to-package)
-      - [Running packages directly with Python](#running-packages-directly-with-python)
-      - [Packaging projects](#packaging-projects)
-      - [Creating a command](#creating-a-command)
-      - [Adding some Google Cloud Platform integration](#adding-some-google-cloud-platform-integration)
-      - [Pip installations](#pip-installations)
-        - [Word of advice on running `setup.py` directly](#word-of-advice-on-running-setuppy-directly)
-    - [Parsing arguments](#parsing-arguments)
-  - [Setting up gcloud SDK](#setting-up-gcloud-sdk)
+- [Python Tutorial with Git, Gitlab-CI, Cloudbuild-CI, Docker, Gcloud]
+
+Task manager
+
+Description : Create a task manager which able to add , view and
+manage tasks
+Each task : title , description and priority and due date
+
+Quiz game
+
+Create a quiz game that read questions from a file and present to the
+user and score the answer
+File handling ( create a file -> questions )
+
+(#python-tutorial-with-git-gitlab-ci-cloudbuild-ci-docker-gcloud)
+
+- [FAQ: Why would I want to read this?](#faq-why-would-i-want-to-read-this)
+- [FAQ: What are we going to be doing here?](#faq-what-are-we-going-to-be-doing-here)
+- [Understanding the PYTHONPATH](#understanding-the-pythonpath)
+- [Understanding the global environment](#understanding-the-global-environment)
+  - [Script directory or current directory](#script-directory-or-current-directory)
+  - [Core Python installation](#core-python-installation)
+  - [Site packages](#site-packages)
+  - [(Advanced) Compiled modules](#advanced-compiled-modules)
+  - [(Advanced) Zip Python core installation](#advanced-zip-python-core-installation)
+- [About directories and code organisation](#about-directories-and-code-organisation)
+- [Understanding a virtual environment](#understanding-a-virtual-environment)
+  - [Installing Pipenv](#installing-pipenv)
+  - [Creating a virtual environment with Pipenv](#creating-a-virtual-environment-with-pipenv)
+  - [Virtualenv paths](#virtualenv-paths)
+- [Creating a Python project](#creating-a-python-project)
+  - [Opening a directory as a project with PyCharm](#opening-a-directory-as-a-project-with-pycharm)
+    - [(Advanced) Selecting external virtualenv](#advanced-selecting-external-virtualenv)
+  - [Planning our work](#planning-our-work)
+    - [Searching in Google what we want to do](#searching-in-google-what-we-want-to-do)
+    - [Installing jupyter notebook as a dependency](#installing-jupyter-notebook-as-a-dependency)
+    - [Create quick mock notebook](#create-quick-mock-notebook)
+  - [Initializing a git repository](#initializing-a-git-repository)
+    - [Setting up git](#setting-up-git)
+  - [Adding initial files to git](#adding-initial-files-to-git)
+- [Coding our first script](#coding-our-first-script)
+  - [Getting informed about how to use the API](#getting-informed-about-how-to-use-the-api)
+  - [Structuring the code](#structuring-the-code)
+  - [Running the initial script](#running-the-initial-script)
+  - [Using the IDE and exploring other packages](#using-the-ide-and-exploring-other-packages)
+  - [Dependencies of the code on external tools](#dependencies-of-the-code-on-external-tools)
+  - [Saving the work](#saving-the-work)
+  - [Project status so far](#project-status-so-far)
+- [From script to packaged cli application](#from-script-to-packaged-cli-application)
+  - [From script to package](#from-script-to-package)
+    - [Running packages directly with Python](#running-packages-directly-with-python)
+    - [Packaging projects](#packaging-projects)
+    - [Creating a command](#creating-a-command)
+    - [Adding some Google Cloud Platform integration](#adding-some-google-cloud-platform-integration)
+    - [Pip installations](#pip-installations)
+      - [Word of advice on running `setup.py` directly](#word-of-advice-on-running-setuppy-directly)
+  - [Parsing arguments](#parsing-arguments)
+- [Setting up gcloud SDK](#setting-up-gcloud-sdk)
 
 ---
 
@@ -264,7 +279,7 @@ The main creation tool to create a virtual environment is `venv` or `virtualenv`
 
 Traditionally, on top of those two, we can find `virtualenv-wrapper`, which takes care of the location. In our case, we are going to use Pipenv because besides the aforementioned functionalities, Pipenv gives a few nice extras around dependency management.
 
-At the beginning of the guide I showed how I only have globally installed a few packages. These are all Pipenv and its dependencies. I do not recommend installing  Pipenv from brew.
+At the beginning of the guide I showed how I only have globally installed a few packages. These are all Pipenv and its dependencies. I do not recommend installing Pipenv from brew.
 
 Additionally, this guide will only use Pipenv, not show how to use it. The full documentation is available in [the official documentation page](https://pipenv.readthedocs.io/en/latest/)
 
@@ -312,7 +327,6 @@ As before, we have the current directory the first, and we can see that besides 
 This way, we can have several virtual environments, with different packages and versions, where each virtual environment is installing the packages in its own `site-packages` directory.
 
 Feel free to install new packages using Pipenv, and check how the `site-packages` directory gets populated with new packages and modules.
-
 
 ## Creating a Python project
 
