@@ -44,5 +44,6 @@ def main():
             print("Invalid choice !!! = ")
 
 
+# Just convention calling main mmethod
 if __name__ == "__main__":
     main()
